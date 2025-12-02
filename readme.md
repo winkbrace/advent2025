@@ -7,6 +7,8 @@ from previous years.
 
 I'll be using the [Pest](https://pestphp.com/) testing framework to become familiar with it.
 
+Furthermore, AI Assistant is disabled.
+
 ## Setup
 
 ```bash

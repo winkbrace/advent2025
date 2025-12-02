@@ -4,10 +4,10 @@
 require __DIR__ . '/vendor/autoload.php';
 
 // No input validation. If you mess it up, the app will crash.
-[$day, $part] = $argv;
+[$_, $day, $part] = $argv;
 
 // Read example.txt or input.txt
-$source = isset($argv[2]) && $argv[2] === '--example' ? 'example' : 'input';
+$source = isset($argv[3]) && $argv[3] === '--example' ? 'example' : 'input';
 $input = file(__DIR__ . "/src/Day{$day}/input/{$source}.txt");
 
 /** @var Winkbrace\Advent2025\Contracts\Solver $class */
@@ -15,4 +15,4 @@ $class = "\\Winkbrace\\Advent2025\\Day{$day}\\Solver{$day}";
 $method = "solve{$part}";
 $solution = new $class($input)->$method();
 
-echo "\n\nSolution to $day $part: $solution\n";
+echo "\nSolution to $day $part: $solution\n";
