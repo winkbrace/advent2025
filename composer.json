@@ -1,0 +1,33 @@
+{
+    "name": "winkbrace/advent2025",
+    "description": "Advent of Code 2025 - PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Winkbrace\\Advent2025\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Winkbrace\\Advent2025\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bas de Ruiter",
+            "email": "deruiterb@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~8.4.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
