@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Winkbrace\\Advent2025\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
