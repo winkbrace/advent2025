@@ -6,8 +6,12 @@ require __DIR__ . '/vendor/autoload.php';
 // No input validation. If you mess it up, the app will crash.
 [$_, $day, $part] = $argv;
 
+if (in_array('--debug', $argv)) {
+    define('DEBUG', true);
+}
+
 // Read example.txt or input.txt
-$source = isset($argv[3]) && $argv[3] === '--example' ? 'example' : 'input';
+$source = in_array('--example', $argv) ? 'example' : 'input';
 $input = file(__DIR__ . "/src/Day{$day}/input/{$source}.txt");
 
 /** @var Winkbrace\Advent2025\Contracts\Solver $class */

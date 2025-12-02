@@ -23,6 +23,14 @@ class Solver01 implements Solver
 
     public function solveB(): string
     {
-        return 'READY TO GO B';
+        $dial = new Dial(100, 50);
+
+        $count = 0;
+        foreach ($this->input as $rotation) {
+            $dial->turn(trim($rotation));
+            $count += $dial->zeroesPassed();
+        }
+
+        return (string) $count;
     }
 }
