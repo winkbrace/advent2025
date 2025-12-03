@@ -12,7 +12,7 @@ if (in_array('--debug', $argv)) {
 
 // Read example.txt or input.txt
 $source = in_array('--example', $argv) ? 'example' : 'input';
-$input = file(__DIR__ . "/src/Day{$day}/input/{$source}.txt");
+$input = array_map('trim', file(__DIR__ . "/src/Day{$day}/input/{$source}.txt"));
 
 /** @var Winkbrace\Advent2025\Contracts\Solver $class */
 $class = "\\Winkbrace\\Advent2025\\Day{$day}\\Solver{$day}";
