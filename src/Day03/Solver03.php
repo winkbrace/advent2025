@@ -12,7 +12,7 @@ class Solver03 implements Solver
     {
         $sum = 0;
         foreach ($this->input as $bank) {
-            $sum += (int) JoltageFinder::findMax($bank);
+            $sum += (int) JoltageFinder::findMax($bank, 2);
         }
 
         return (string) $sum;
@@ -20,6 +20,11 @@ class Solver03 implements Solver
 
     public function solveB(): string
     {
-        return 'TBD';
+        $sum = 0;
+        foreach ($this->input as $bank) {
+            $sum += (int) JoltageFinder::findMax($bank, 12);
+        }
+
+        return (string) $sum;
     }
 }
