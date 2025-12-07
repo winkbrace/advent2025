@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-function dd(...$vars): void
+function dd(mixed ...$vars): never
 {
     var_dump(...$vars);
-    die;
+    exit(1);
 }
 
 function debug(string $msg): void

@@ -13,7 +13,7 @@
 
 pest()
     ->extend(Winkbrace\Advent2025\Tests\TestCase::class)
-    ->beforeAll(fn () => define('DEBUG', true));
+    ->beforeAll(fn () => defined('DEBUG') || define('DEBUG', true));
 
 /*
 |--------------------------------------------------------------------------
