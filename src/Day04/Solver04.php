@@ -17,6 +17,8 @@ class Solver04 implements Solver
 
     public function solveB(): string
     {
-        return 'TBD';
+        $storage = new PaperRollStorage($this->input);
+
+        return (string) $storage->getAllPaperRolls();
     }
 }

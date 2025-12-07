@@ -28,6 +28,34 @@ class PaperRollStorage
         }
     }
 
+    /**
+     * Recursively remove paper rolls until there is nothing left to get.
+     */
+    public function getAllPaperRolls(): int
+    {
+        $total = 0;
+        while (($count = $this->removePaperRolls()) > 0) {
+            $total += $count;
+        }
+
+        return $total;
+    }
+
+    private function removePaperRolls(): int
+    {
+        $count = 0;
+        foreach ($this->grid as $c => $rows) {
+            foreach ($rows as $r => $cell) {
+                if ($this->isAccessible($cell)) {
+                    $cell->occupied = false;
+                    $count++;
+                }
+            }
+        }
+
+        return $count;
+    }
+
     public function countAccessibleCells(): int
     {
         $count = 0;
@@ -78,5 +106,4 @@ class PaperRollStorage
     {
         return $this->grid;
     }
-
 }

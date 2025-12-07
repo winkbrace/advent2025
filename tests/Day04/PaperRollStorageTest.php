@@ -58,4 +58,7 @@ it('a paper roll is not accessible when it is not present', function () {
     expect($this->storage->isAccessible($cell))->toBeFalse();
 });
 
-
+it('gets all paper rolls', function () {
+    $cell = $this->storage->cellAt(0,0);
+    expect($this->storage->getAllPaperRolls())->toBe(43);
+});
