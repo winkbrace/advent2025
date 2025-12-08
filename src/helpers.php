@@ -2,6 +2,7 @@
 
 function dd(mixed ...$vars): never
 {
+    @ob_end_flush();
     var_dump(...$vars);
     exit(1);
 }
