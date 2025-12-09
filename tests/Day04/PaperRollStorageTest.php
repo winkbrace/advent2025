@@ -4,7 +4,10 @@ use Winkbrace\Advent2025\Day04\Cell;
 use Winkbrace\Advent2025\Day04\PaperRollStorage;
 
 beforeEach(function() {
-    $input = array_map('trim', file(__DIR__ . "/../../src/Day04/input/example.txt"));
+    $input = array_map(
+                fn (string $line) => rtrim($line, "\n\r"),
+                file(__DIR__ . "/../../src/Day04/input/example.txt"),
+            );
     $this->storage = new PaperRollStorage($input);
 });
 

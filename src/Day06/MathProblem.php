@@ -7,12 +7,16 @@ class MathProblem
     /** @param int[] $numbers */
     public function __construct(public array $numbers, public Operator $operator) {}
 
-    public function solve(): int
+    public function solve(): string
     {
         if ($this->operator === Operator::Plus) {
-            return array_sum($this->numbers);
+            return array_reduce($this->numbers, function (string $carry, string $nr) {
+                return bcadd($carry, $nr);
+            }, '0');
         }
 
-        return array_product($this->numbers);
+        return array_reduce($this->numbers, function (string $carry, string $nr) {
+            return bcmul($carry, $nr);
+        }, '1');
     }
 }
