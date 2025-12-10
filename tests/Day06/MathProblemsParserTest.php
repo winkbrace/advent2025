@@ -3,12 +3,10 @@
 use Winkbrace\Advent2025\Day06\MathProblem;
 use Winkbrace\Advent2025\Day06\MathProblemsParser;
 use Winkbrace\Advent2025\Day06\Operator;
+use Winkbrace\Advent2025\InputReader;
 
 beforeEach(function() {
-    $input = array_map(
-                fn (string $line) => rtrim($line, "\n\r"),
-                file(__DIR__ . "/../../src/Day06/input/example.txt"),
-            );
+    $input = InputReader::read('06', 'example');
     $this->parser = new MathProblemsParser($input);
 });
 

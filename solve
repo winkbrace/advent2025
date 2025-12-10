@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php declare(strict_types=1);
 
+ini_set("memory_limit", '16G');
+
 require __DIR__ . '/vendor/autoload.php';
 
 // No input validation. If you mess it up, the app will crash.
@@ -12,10 +14,7 @@ if (in_array('--debug', $argv)) {
 
 // Read example.txt or input.txt
 $source = in_array('--example', $argv) ? 'example' : 'input';
-$input = array_map(
-            fn (string $line) => rtrim($line, "\n\r"),
-            file(__DIR__ . "/src/Day{$day}/input/{$source}.txt"),
-        );
+$input = Winkbrace\Advent2025\InputReader::read($day, $source);
 
 /** @var Winkbrace\Advent2025\Contracts\Solver $class */
 $class = "\\Winkbrace\\Advent2025\\Day{$day}\\Solver{$day}";

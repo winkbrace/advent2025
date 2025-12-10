@@ -2,12 +2,10 @@
 
 use Winkbrace\Advent2025\Day04\Cell;
 use Winkbrace\Advent2025\Day04\PaperRollStorage;
+use Winkbrace\Advent2025\InputReader;
 
 beforeEach(function() {
-    $input = array_map(
-                fn (string $line) => rtrim($line, "\n\r"),
-                file(__DIR__ . "/../../src/Day04/input/example.txt"),
-            );
+    $input = InputReader::read('04', 'example');
     $this->storage = new PaperRollStorage($input);
 });
 

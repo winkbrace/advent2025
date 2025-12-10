@@ -24,7 +24,8 @@
     ],
     "require": {
         "php": "~8.4.0",
-        "ext-bcmath": "*"
+        "ext-bcmath": "*",
+        "illuminate/collections": "^12.42"
     },
     "require-dev": {
         "pestphp/pest": "^4.1"
